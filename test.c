@@ -70,7 +70,7 @@
 //	unsigned int age = 24;
 //	return 0;
 //}
-#include <stdio.h>
+//#include <stdio.h>
 //int main() {
 //	double score = 5.0;
 //	score = (score / 20.0)*100.0;
@@ -91,18 +91,51 @@
 //	printf("a = %d b = %d c = %d\n:", a, b, c);
 //	return 0;
 //}
+//int main() {
+//	/*printf("%6.4f", 3.1415);
+//	限制了宽度最低六位，小说点后最高四位 */
+//	//printf("%*.*lf\n",6,3,3.1415926);
+//	//printf("%s今年%d岁\n","王羲之", 24);
+//	//printf("我最喜欢的颜色是#%.5s", "008c8c");
+//	//printf("我最喜欢的颜色是#%lx", 16777215);
+//	int score = 0;
+//	//printf("请输入分数：");
+//	//scanf("%d",&score);
+//	//printf("您的分数是：%d",score);
+//	//scanf函数读取是用户的输入
+//	//scanf函数中占位符的后面需要输入地址
+//	//&是取地址操作符；&score是取出score变量的地址
+//	/*int a;
+//	int b;*/
+//	/*printf("请输入队友的寿命：");
+//	int s = scanf("%d %d", &a ,&b);
+//	printf("你的队友寿命为：%d:\n" ,a + b );
+//	printf("scanf的返回值是：%d", s);*/
+//	char ch = 0;
+//	printf("测试字符：");
+//	int ret = scanf(" %c", &ch);
+//	printf("你的名字叫做：AAA%cAAA\n", ch);
+//	printf("scanf的返回值是：%d", ret);
+//	return 0;
+//}  
+//局部变量不初始化默认是随机数，
+// 全局变量不初始化默认是0
+//int main() {
+//	char name[25] = {0};
+//	printf("请选择你的英雄:");
+//	scanf("%8s",name);
+//	printf("您选择了：%s\n", name);
+//	int sum = strlen(name);
+//	printf("英雄名字：%d字", sum);
+//	return 0;
+//}
 int main() {
-	/*printf("%6.4f", 3.1415);
-	限制了宽度最低六位，小说点后最高四位 */
-	//printf("%*.*lf\n",6,3,3.1415926);
-	//printf("%s今年%d岁\n","王羲之", 24);
-	//printf("我最喜欢的颜色是#%.5s", "008c8c");
-	//printf("我最喜欢的颜色是#%lx", 16777215);
-	int score = 0;
-	printf("请输入分数：");
-	scanf("%d",&score);
-	printf("您的分数是：%d",score);
-	//scanf函数中占位符的后面需要输入地址
-	//&是取地址操作符；&score是取出score变量的地址
+	int year = 0;
+	int month = 0;
+	int day = 0;
+	printf("请输入年/月/日：");
+	scanf("%d%*c%d%*c%d", &year, &month, &day);
+	printf("%d/%d/%d", year, month, day);
 	return 0;
 }
+//顺序结构,选择结构,循环结构 
