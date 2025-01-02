@@ -129,13 +129,75 @@
 //	printf("英雄名字：%d字", sum);
 //	return 0;
 //}
-int main() {
-	int year = 0;
-	int month = 0;
-	int day = 0;
-	printf("请输入年/月/日：");
-	scanf("%d%*c%d%*c%d", &year, &month, &day);
-	printf("%d/%d/%d", year, month, day);
-	return 0;
-}
+//int main() {
+//	int year = 0;
+//	int month = 0;
+//	int day = 0;
+//	printf("请输入年/月/日：");
+//	scanf("%d%*c%d%*c%d", &year, &month, &day);
+//	printf("%d/%d/%d", year, month, day);
+//	return 0;
+//}
 //顺序结构,选择结构,循环结构 
+// 判断奇数偶数
+//int main() {
+//	int num = 0;
+//	scanf("%d", &num);
+//	if (num % 2 == 1)
+//		printf("%d是奇数", num);
+//	else
+//		printf("%d是偶数", num);
+//		
+//	return 0;
+//}
+//判断是否成年
+//int main() {
+//	int age = 0;
+//	printf("请输入你的年龄:");
+//	scanf("%d", &age);
+//	if (age >= 18) {
+//		printf("恭喜你已经成年，年龄为:%d\n", age);
+//		printf("你已成年可以访问网站");
+//	}
+//	else if(age < 18 && age > 0) {
+//		printf("很遗憾你未成年，年龄为:%d\n", age);
+//		printf("你未成年不可以访问网站");
+//	}
+//	else {
+//		printf("你输入的年龄不合法，请重新输入！！！");
+//	}
+//	
+//	return 0;
+//}
+//默认情况下if和else后面只能加一条语句，如果要加多条语句就加{}；
+
+//int main() {
+//	int age = 0;
+//	printf("请输入你的年龄：");
+//	scanf("%d", &age);
+//	if (age < 18)
+//		printf("少年");
+//	else if (age <= 44)
+//		printf("青年");
+//	else if (age <= 59)
+//		printf("中老年");
+//	else if (age <= 89)
+//		printf("老年");
+//	else
+//		printf("老寿星");
+//	return 0;
+//}
+int main() {
+	int a = 0;
+	int b = 2;
+	if (a == 1) {
+		if (b == 2)
+			printf("hehe");
+		else
+			printf("hehe");
+	}
+
+return 0;
+}
+
+	
