@@ -289,20 +289,113 @@
 //	return 0;
 //}
 // 输入1-7数字打印工作日或休息日
+//int main() {
+//	int day = 0;
+//	printf("输入数字1-7:");
+//	scanf("%d", &day);
+//	switch (day)
+//	{
+//		case 1:case 2: case 3: case 4: case 5:
+//			printf("工作日");
+//			break;
+//		case 6: case 7:
+//			printf("休息日");
+//			break;
+//		default:
+//			printf("输入错误");
+//	}
+//	return 0;
+//}
+//循环语句
+//while循环
+//int main() {
+//	int i = 0;
+//	while (i<=10) {
+//		printf("%d\n", i);
+//		i++;
+//	}
+//	return 0;
+//}
+//利用循环反向打印数字
+//int main() {
+//	int num = 0;
+//	printf("输入一个正整数：");
+//	scanf("%d", &num);
+//	while (num) {
+//		printf("%d", num % 10);
+//		num /= 10;
+//	}
+//	return;
+//}
+//for循环
+//int main() {
+//	/*for (初始化表达式; 判断表达式 ; 调整表达式){语句}*/
+//	//初始化表达式只会执行一次
+//	//求1-100 3的倍数的和
+//	int sum = 0;
+//	//for (int i = 1; i <= 100; i++)
+//	//{
+//	//	if (i % 3 == 0) {
+//	//		sum += i;
+//	//	}
+//	//}
+//	//第二种方法 代码更简洁 效率更高
+//	for (int i = 0; i <= 100; i += 3)
+//	{
+//		sum += i;
+//	}
+//	printf("%d ", sum);
+//	
+//	return 0;
+//} 
+
+//do…while 循环
+//do{语句} while (判断);do while循环先执行后判断，语句至少执行一次；
+//int main() {
+// 打印1-10
+//	int i = 1;
+//	do {
+//		printf("%d", i);
+//		i++;
+//	}while (i <= 10);
+//	return 0;
+//}   
+//输入一个正整数，计算出他是几位数
+//int main() {
+//	int n = 0 , i = 0;
+//	printf("输入一位正整数：");
+//	scanf("%d", &n);
+//	do {
+//		i++;
+//		n = n / 10;
+//	} while (n != 0);
+//	printf("这个%d位数", i);
+//	return 0;
+//}
+
+//break和continue在循环中的作用
+//int main() {
+//	int i = 0;
+//	while ( i < 10) {
+//		i++;
+//		if (i == 5) {
+//		//break;/*终止循环*/
+//		continue;/*跳过了continue下面的循环代码*/
+//		}
+//		printf("%d", i);
+//	}
+//	return 0;
+//};
+
 int main() {
-	int day = 0;
-	printf("输入数字1-7:");
-	scanf("%d", &day);
-	switch (day)
-	{
-		case 1:case 2: case 3: case 4: case 5:
-			printf("工作日");
-			break;
-		case 6: case 7:
-			printf("休息日");
-			break;
-		default:
-			printf("输入错误");
+	int i = 0;
+	for (i = 1; i <= 10; i++) {
+		if (i == 5) {
+			//break;
+			continue;
+		}
+		
+		printf("%d ", i);
 	}
 	return 0;
 }
