@@ -170,7 +170,7 @@
 //	return 0;
 //}
 //默认情况下if和else后面只能加一条语句，如果要加多条语句就加{}；
-
+//if  内的表达式会将结果计算为1 或者0
 //int main() {
 //	int age = 0;
 //	printf("请输入你的年龄：");
@@ -187,17 +187,122 @@
 //		printf("老寿星");
 //	return 0;
 //}
+//int main() {
+//	int a = 0;
+//	int b = 2;
+//	if (a == 1) {
+//		if (b == 2)
+//			printf("hehe");
+//		else
+//			printf("hehe");
+//	}
+//
+//return 0;
+//}
+
+
+//关系操作符也叫关系表达式
+// 包含 "< ,> , = , <= , >= ，== ，!="
+
+// 条件运算符也是三目操作符 a < b ? a : b
+//int main() {
+//	int a = 0, b = 0;
+//	printf("请输入两个数字");
+//	scanf("%d %d" ,&a , &b);
+//	int big = (a > b ? a : b);
+//	printf("较大的数字是%d", big);
+//	return 0;
+//}
+
+//逻辑运算符 包含“&& ，|| ，!”
+//int main() {
+//	int year = 0;
+//	printf("请输入年份");
+//	scanf("%d", &year);
+//		if(year % 4 ==0 && year % 100 != 0 || year % 400 ==0){
+//			printf("%d是闰年",year);
+//		}
+//		else {
+//			printf("%d不是闰年", year);
+//		}
+//	return 0;
+//}
+//赋值运算符优先级别最低
+//int main() {
+//	int a = 1, b = 2, c = 3, d = 0;
+//	int i = (a++ && ++b && d++);
+//	printf("%d", i);
+//	return 0;
+//}
+
+//switch语句
+//int main() {
+//	int num = 0;
+//	printf("请输入一个数字");
+//	scanf("%d",&num);
+//	if (num % 3 == 0) {
+//		printf("零");
+//	}
+//	else if (num % 3 == 1) {
+//		printf("一");
+//	}
+//	else {
+//		printf("三");
+//	}
+//	return 0;
+//}
+//int main() {
+//	int num = 0;
+//	printf("请输入一个数字");
+//	scanf("%d", &num);
+//	switch (num % 3) {
+//	case 0: printf("零");
+//		break;
+//	case 1: printf("一");
+//		break;
+//	case 2: printf("二");
+//		break;
+//	}
+//	return 0;
+//}
+// 输入1-7数字打印周一到周日
+//int main() {
+//	int num = 0;
+//	printf("输入数字1-7:");
+//	scanf("%d", &num);
+//	switch (num) {
+//	case 1: printf("今天是周一");
+//		break;
+//	case 2: printf("今天是周二");
+//		break;
+//	case 3: printf("今天是周三");
+//		break;
+//	case 4: printf("今天是周四");
+//		break;
+//	case 5: printf("今天是周五");
+//		break;
+//	case 6 : printf("今天是周六");
+//		break;
+//	case 7 : printf("今天是周日");
+//		break;
+//	}
+//	return 0;
+//}
+// 输入1-7数字打印工作日或休息日
 int main() {
-	int a = 0;
-	int b = 2;
-	if (a == 1) {
-		if (b == 2)
-			printf("hehe");
-		else
-			printf("hehe");
+	int day = 0;
+	printf("输入数字1-7:");
+	scanf("%d", &day);
+	switch (day)
+	{
+		case 1:case 2: case 3: case 4: case 5:
+			printf("工作日");
+			break;
+		case 6: case 7:
+			printf("休息日");
+			break;
+		default:
+			printf("输入错误");
 	}
-
-return 0;
+	return 0;
 }
-
-	
