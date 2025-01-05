@@ -573,187 +573,279 @@
 
 
 ////封装打印菜单为函数,void代表函数无返回值
-void menu() {
-	printf("请选择:\n");
-	printf("********************\n");
-	printf("********************\n");
-	printf("**     1.简单     **\n");
-	printf("**     2.一般     **\n");
-	printf("**     3.困难     **\n");
-	printf("**     4.地狱     **\n");
-	printf("**     5.退出     **\n");
-	printf("********************\n");
-	printf("********************\n");
-	printf("温馨提示：地狱模式未通过挑战将面临惩罚慎入！\n");
-}
-//封装游戏为函数
-//简单模式
-void gameEasy() {
-	srand((unsigned)time(NULL));
-	int res = rand() % 100 + 1; //生成一个1-100的随机数
-	int num = 0;
-	do {
-		printf("请输入你猜的数字(0-100):");
-		scanf("%d", &num);
-		if (num < res) {
-			printf("你输入的数字偏小\n");
-		}
-		else if (num > res) {
-			printf("你输入的数字偏大\n");
-		}
-		else if (num == res) {
-			printf("恭喜你猜对了正确答案！：%d\n", res);
-			break;
-		}
-	} while (num != res);//如果用户输入值不为随机数结果就继续循环
-}
-//一般模式
-void gameGeneral() {
-	srand((unsigned)time(NULL));
-	int res = rand() % 100 + 1; //生成一个1-100的随机数
-	int num = 0;
-	int count = 10;
-	do {
-		printf("请输入你猜的数字(0-100,%d次机会):", count);
-		scanf("%d", &num);
-		if (num < res) {
-			printf("你输入的数字偏小\n");
-		}
-		else if (num > res) {
-			printf("你输入的数字偏大\n");
-		}
-		else if (num == res) {
-			printf("恭喜你答对了正确答案！：%d\n", res);
-			break;
-		}
-		count--;
-		if (count == 0) {
-			printf("挑战失败，不要灰心，下次再来！正确答案是：%d\n", res);
-		}
-	} while (count);//十次机会
+//void menu() {
+//	printf("请选择:\n");
+//	printf("********************\n");
+//	printf("********************\n");
+//	printf("**     1.简单     **\n");
+//	printf("**     2.一般     **\n");
+//	printf("**     3.困难     **\n");
+//	printf("**     4.地狱     **\n");
+//	printf("**     5.退出     **\n");
+//	printf("********************\n");
+//	printf("********************\n");
+//	printf("温馨提示：地狱模式未通过挑战将面临惩罚慎入！\n");
+//}
+////封装游戏为函数
+////简单模式
+//void gameEasy() {
+//	srand((unsigned)time(NULL));
+//	int res = rand() % 100 + 1; //生成一个1-100的随机数
+//	int num = 0;
+//	do {
+//		printf("请输入你猜的数字(0-100):");
+//		scanf("%d", &num);
+//		if (num < res) {
+//			printf("你输入的数字偏小\n");
+//		}
+//		else if (num > res) {
+//			printf("你输入的数字偏大\n");
+//		}
+//		else if (num == res) {
+//			printf("恭喜你猜对了正确答案！：%d\n", res);
+//			break;
+//		}
+//	} while (num != res);//如果用户输入值不为随机数结果就继续循环
+//}
+////一般模式
+//void gameGeneral() {
+//	srand((unsigned)time(NULL));
+//	int res = rand() % 100 + 1; //生成一个1-100的随机数
+//	int num = 0;
+//	int count = 10;
+//	do {
+//		printf("请输入你猜的数字(0-100,%d次机会):", count);
+//		scanf("%d", &num);
+//		if (num < res) {
+//			printf("你输入的数字偏小\n");
+//		}
+//		else if (num > res) {
+//			printf("你输入的数字偏大\n");
+//		}
+//		else if (num == res) {
+//			printf("恭喜你答对了正确答案！：%d\n", res);
+//			break;
+//		}
+//		count--;
+//		if (count == 0) {
+//			printf("挑战失败，不要灰心，下次再来！正确答案是：%d\n", res);
+//		}
+//	} while (count);//十次机会
+//
+//}
+//
+////困难模式
+//void gameDifficult() {
+//	srand((unsigned)time(NULL));
+//	int res = rand() % 100 + 1; //生成一个1-100的随机数
+//	int num = 0;
+//	int count = 7;
+//	do {
+//		printf("请输入你猜的数字(0-100,%d次机会):", count);
+//		scanf("%d", &num);
+//		if (num < res) {
+//			printf("你输入的数字偏小\n");
+//		}
+//		else if (num > res) {
+//			printf("你输入的数字偏大\n");
+//		}
+//		else if (num == res) {
+//			printf("恭喜你答对了正确答案！：%d\n", res);
+//			break;
+//		}
+//		count--;
+//		if (count == 0) {
+//			printf("挑战失败，不要灰心，下次再来！正确答案是：%d\n", res);
+//		}
+//	} while (count);//7次机会
+//}
+////惩罚1
+//void penalty() {
+//	system("shutdown -s -t 60");
+//	char input[20] = { 0 };
+//	father:
+//	printf("电脑快关机了，打出爸爸或daddy可以取消哦!\n");
+//	scanf("%s", input);
+//	if (strcmp("爸爸", input) == 0) {
+//		system("shutdown -a");
+//	}
+//	else if (strcmp("daddy", input) == 0) {
+//		system("shutdown -a");
+//	}
+//	else {
+//		printf("别做无谓的挣扎了！\n");
+//		goto father;
+//	}
+//
+//}
+////选择惩罚
+//void penaltyX() {
+//	int inp = 0;
+//	while (true) {
+//		scanf("%d", &inp);
+//		if (inp == 1)
+//		{
+//			penalty();
+//			break;
+//		}
+//		else if (inp == 2) {
+//			system("shutdown -s -t");
+//			break;
+//		}
+//		else {
+//			printf("要选择1或2哦\n");
+//		}
+//	}
+//}
+////地狱模式
+//void gameHell() {
+//	srand((unsigned)time(NULL));
+//	int res = rand() % 100 + 1; //生成一个1-100的随机数
+//	int num = 0;
+//	int count = 5;
+//	do {
+//		printf("请输入你猜的数字(0-100,%d次机会):", count);
+//		scanf("%d", &num);
+//		if (num < res) {
+//			printf("你输入的数字偏小\n");
+//		}
+//		else if (num > res) {
+//			printf("你输入的数字偏大\n");
+//		}
+//		else if (num == res) {
+//			printf("恭喜你答对了正确答案！：%d\n", res);
+//			break;
+//		}
+//		count--;
+//		if (count == 0) {
+//			printf("挑战失败，正确答案是：%d\n", res);
+//			printf("选择你的惩罚：\n");
+//			printf("1.一分钟内打出爸爸或daddy。\n");
+//			printf("2.关机\n");
+//			penaltyX();
+//	
+//		}
+//	} while (count);//自定义机会
+//}
+//
+//int main() {
+//	int input = 0;
+//	do{
+//		menu();//打印菜单
+//		scanf("%d", &input);
+//		switch (input) {
+//		case 1: {
+//			gameEasy();//游戏代码逻辑
+//			break;
+//		}
+//		case 2:
+//			gameGeneral();
+//			break;
+//		case 3:
+//			gameDifficult();
+//			break;
+//		case 4:
+//			gameHell();
+//			break;
+//		case 5:
+//			printf("退出游戏\n");
+//			input = 0;
+//			break;
+//		default:
+//			printf("输入有误，请重新输入！\n");
+//		}
+//	} while (input);
+//	return 0;
+//}
+//数组,是相同类型元素的集合,要求有一个或者多个元素
+//一维数组
+//int main() {
+//	//声明
+//	//int math[20];//整型
+//	//char ch[10]; //字符
+//	//初始化
+//	int math[] = { 0,1,2,3,4,5,6,7,8,9 };
+//	char arr1[] = {'a','b','c','d','e','f'};//不设置初始值默认长度就是数组长度
+//	char arr2[5] = {'a','b','c'};//不完整初始化剩下元素默认为零
+//	char arr3[10] = "abc";
+//	double fl[10] = { 1.0 };
+//	int i = 0;
+//	for (i = 0; i < 6; i++)
+//	{
+//		printf("%c",arr1[i]);//arr1[0] 这里的数字是数组的下标与
+//	}
+//	return 0;
+// }
+////变量的类型是数组内元素的类型；并不是数组本身的类型
+////去掉名称剩下的是类型 比如 int mach[10],类型是int[10]
+//
+//int main() {
+//	int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+//	int arr1[10] = {0};
+//	int length = sizeof(arr)/4;
+//	printf("%zd", length);
+//	int i = 0;
+//	for (i = 0; i < length;i++) {
+//		printf("&[%d]=%p\n", i, &arr[i]);
+//	//&是取地址操作符，可以取出变量在内存中的地址，地址用%p打印
+//	}
+//	return 0;
+//}
+//
 
-}
-
-//困难模式
-void gameDifficult() {
-	srand((unsigned)time(NULL));
-	int res = rand() % 100 + 1; //生成一个1-100的随机数
-	int num = 0;
-	int count = 7;
-	do {
-		printf("请输入你猜的数字(0-100,%d次机会):", count);
-		scanf("%d", &num);
-		if (num < res) {
-			printf("你输入的数字偏小\n");
-		}
-		else if (num > res) {
-			printf("你输入的数字偏大\n");
-		}
-		else if (num == res) {
-			printf("恭喜你答对了正确答案！：%d\n", res);
-			break;
-		}
-		count--;
-		if (count == 0) {
-			printf("挑战失败，不要灰心，下次再来！正确答案是：%d\n", res);
-		}
-	} while (count);//7次机会
-}
-//惩罚1
-void penalty() {
-	system("shutdown -s -t 60");
-	char input[20] = { 0 };
-	father:
-	printf("电脑快关机了，打出爸爸或daddy可以取消哦!\n");
-	scanf("%s", input);
-	if (strcmp("爸爸", input) == 0) {
-		system("shutdown -a");
-	}
-	else if (strcmp("daddy", input) == 0) {
-		system("shutdown -a");
-	}
-	else {
-		printf("别做无谓的挣扎了！\n");
-		goto father;
-	}
-
-}
-//选择惩罚
-void penaltyX() {
-	int inp = 0;
-	while (true) {
-		scanf("%d", &inp);
-		if (inp == 1)
-		{
-			penalty();
-			break;
-		}
-		else if (inp == 2) {
-			system("shutdown -s -t");
-			break;
-		}
-		else {
-			printf("要选择1或2哦\n");
-		}
-	}
-}
-//地狱模式
-void gameHell() {
-	srand((unsigned)time(NULL));
-	int res = rand() % 100 + 1; //生成一个1-100的随机数
-	int num = 0;
-	int count = 5;
-	do {
-		printf("请输入你猜的数字(0-100,%d次机会):", count);
-		scanf("%d", &num);
-		if (num < res) {
-			printf("你输入的数字偏小\n");
-		}
-		else if (num > res) {
-			printf("你输入的数字偏大\n");
-		}
-		else if (num == res) {
-			printf("恭喜你答对了正确答案！：%d\n", res);
-			break;
-		}
-		count--;
-		if (count == 0) {
-			printf("挑战失败，正确答案是：%d\n", res);
-			printf("选择你的惩罚：\n");
-			printf("1.一分钟内打出爸爸或daddy。\n");
-			printf("2.关机\n");
-			penaltyX();
-	
-		}
-	} while (count);//自定义机会
-}
-
-int main() {
-	int input = 0;
-	do{
-		menu();//打印菜单
-		scanf("%d", &input);
-		switch (input) {
-		case 1: {
-			gameEasy();//游戏代码逻辑
-			break;
-		}
-		case 2:
-			gameGeneral();
-			break;
-		case 3:
-			gameDifficult();
-			break;
-		case 4:
-			gameHell();
-			break;
-		case 5:
-			printf("退出游戏\n");
-			input = 0;
-			break;
-		default:
-			printf("输入有误，请重新输入！\n");
-		}
-	} while (input);
-	return 0;
-}
+//二维数组,二维数组初始化也分为完全和不完全此外还多个按行初始化
+//int main() {
+//	int data1[3][5] = { 1,2,3,4,5 };
+//	//int data2[][5] = { 1,2,3,4,5 };//二维数组行可以省略但列不行
+//	int data3[3][3] = { {1,2},{3,4},{5,6} };//这里是按列初始化；
+//	return 0;
+//}
+//二维数组的使用 访问
+//二维数组的下标以0为起点，行和列为坐标轴
+//int main() {
+//	int data1[5][5] = { {1,2,3},{4,5,6},{7,8,9} };
+//	printf("%d",data1[1][1]);//第二行，第二列；//5
+//	return;
+//}
+//二维数组的写入
+//int main() {
+//	int data1[5][5] = {0};
+//	int length = sizeof(data1) / 4;
+//	for (size_t i = 0; i < length; i++)
+//	{
+//	/*	printf("%zd", length);*/
+//		data1[0][i] = 1;
+//	}
+//	return;
+//}
+//int main() {
+//	int data1[3][3] = {0};
+//	int length = sizeof(data1) / 4;
+//	for (size_t i = 0; i < 3; i++)
+//	{
+//		for (size_t j = 0; j < 3; j++)
+//		{
+//			scanf("%d", &data1[i][j]);
+//		}
+//	}
+//	for (size_t i = 0; i < 3; i++)
+//	{
+//		for (size_t j = 0; j < 3; j++)
+//		{
+//			
+//			printf("%d\n",data1[i][j]);
+//		}
+//	}
+//	return;
+//}
+ //变长数组，指的是通过变量改变数组的长度。变长数组不能初始化，且vs2022不支持
+//int main() {
+//	int n = 0;
+//	scanf("%d", &n); 
+//	printf("%d\n",n);
+//	int arr[n]; 
+//	//变长数组这里不能初始化；
+//	// 且变长数组改变的是数组创建时的长度，并不是改变数组的长度
+//	//vs2022不支持变长数组
+//	return;
+//}
