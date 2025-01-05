@@ -1,5 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <time.h>
 //头文件使用c语言默认的库函数要加
 //int main()
 //{ 
@@ -21,8 +25,6 @@
 //	}
 //	return 0;
 //}
-#include <string.h>
-
 //int main() {
 //	/*char arr1[] = "abcdef";
 //	char arr2[]={ 'a','b','c','d','e','f','\0'};
@@ -31,7 +33,7 @@
 //	printf("\520666");
 //	return 0;
 //};
-#include <stdbool.h>
+
 //int main() {
 //	/*_Bool flag = true;*/
 //	/*bool flag = true;
@@ -387,15 +389,371 @@
 //	return 0;
 //};
 
-int main() {
-	int i = 0;
-	for (i = 1; i <= 10; i++) {
-		if (i == 5) {
-			//break;
-			continue;
+//int main() {
+//	int i = 0;
+//	for (i = 1; i <= 10; i++) {
+//		if (i == 5) {
+//			//break;
+//			continue;
+//		}
+//		
+//		printf("%d ", i);
+//	}
+//	return 0;
+//}
+
+//打印100-200的所有素数
+//int main() {
+//	int i = 0, n = 0;
+//	for (i = 100; i <= 200; i++) {
+//		int flag = 1;
+//		for (n = 2; n < i ; n++) {
+//			if (i % n == 0){
+//				flag = 0;
+//				break;
+//			}			
+//		}
+//		if (flag){
+//			
+//		}
+//	}
+//	return 0;
+//}
+//优化代码
+//int main() {
+//	int i = 0, n = 0;
+//	for (int i = 100;i <= 200; i++) {
+//		int flag = 1;
+//		for ( n = 2; n < 9; n++) {
+//			if (i % n == 0) {
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (i % n) {
+//			printf("%d ", i);
+//	}
+//	}
+//	return 0;
+//}
+
+//int main() {
+//	int i = 0, n = 0;
+//	for (int i = 0;i <= 100; i++) {
+//		int flag = 1;
+//		for (n = 2; n < 9; n++) {
+//			if (i % n == 0) {
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (flag) {
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+//sqrt()是一个计算平方根的库函数
+//#include <math.h>
+//int main() {
+//	int i = 0, n = 0 , sum = 0;
+//	for (int i = 100;i <= 200; i++) {
+//		int flag = 1 ;
+//		for (n = 2; n <= sqrt(i);n++) {
+//			if (i % n == 0) {
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (flag) {
+//			printf("%d ", i);
+//			sum += 1;
+//		}
+//	}
+//	printf("\n这个区间一共有%d位素数", sum);
+//	return 0;
+//}
+
+
+
+
+//goto语句 跳转代码到指定位置
+
+//int main() {
+//	printf("我是第一句\n");
+//	goto five;
+//	printf("我是第二句\n");
+//	printf("我是第三句\n");
+//	printf("我是第四句\n");
+//	five:
+//	printf("我是第五句\n");
+//	return 0;
+//}
+
+//goto语句使用场景多重循环
+//#include <math.h>
+//int main() {
+//	int i = 0, n = 0 , sum = 0;
+//	for (int i = 100;i <= 200; i++) {
+//		int flag = 1 ;
+//		for (n = 2; n <= sqrt(i);n++) {
+//			if (i % n == 0) {
+//				flag = 0;
+//				goto goflag;
+//			}
+//		}
+//		goflag:
+//		if (flag) {
+//			printf("%d ", i);
+//			sum += 1;
+//		}
+//	}
+//	printf("\n这个区间一共有%d位素数", sum);
+//	return 0;
+//}
+
+//关机程序
+//1.程序运行起来后60秒后关机；
+//2.如果输入爸爸两个字取消关机；
+
+//int main() {
+//	char input[20] = { 0 };
+//	system("shutdown -s -t 60");
+//	father:
+//	printf("电脑快关机了，喊爸爸可以取消哦!\n");
+//	scanf("%s", input);
+//	if (strcmp("爸爸" ,input) == 0) {
+//		system("shutdown -a");
+//	}
+//	else {
+//		printf("别做无谓的挣扎了，赶快喊！\n");
+//		goto father;
+//	}
+//	return 0;
+//}
+
+////随机数生成 rand()函数值是在0-32767之间
+//#include <time.h>
+//int main(){
+//	//设置随机数的生成起点
+//	srand((unsigned int)time(NULL));
+//	//用时间戳来随机srand的数值，srand()是rand()的种子
+//	for (int i = 1; i <= 10; i++) {
+//		printf("%d\n", rand()%100);
+//	}
+//	
+//	return;
+//}
+
+//int main() {
+//	int num = 0;
+//	srand((unsigned)time(NULL));
+//	int res = rand() % 100 + 1;
+//	imp:
+//	printf("请输入你猜的数字(0-100的值):");
+//	scanf("%d", &num);
+//	if(num < res){
+//		printf("你输入的数字偏小\n");
+//		goto imp;
+//	}
+//	else if (num > res) {
+//		printf("你输入的数字偏大\n");
+//		goto imp;
+//	}
+//	else if (num == res) {
+//		printf("恭喜你猜到了正确答案%d\n", res);
+//	}
+//	else {
+//		printf("你的输入不合法\n");
+//		goto imp;
+//	}
+//	return 0;
+//}
+
+
+
+////封装打印菜单为函数,void代表函数无返回值
+void menu() {
+	printf("请选择:\n");
+	printf("********************\n");
+	printf("********************\n");
+	printf("**     1.简单     **\n");
+	printf("**     2.一般     **\n");
+	printf("**     3.困难     **\n");
+	printf("**     4.地狱     **\n");
+	printf("**     5.退出     **\n");
+	printf("********************\n");
+	printf("********************\n");
+	printf("温馨提示：地狱模式未通过挑战将面临惩罚慎入！\n");
+}
+//封装游戏为函数
+//简单模式
+void gameEasy() {
+	srand((unsigned)time(NULL));
+	int res = rand() % 100 + 1; //生成一个1-100的随机数
+	int num = 0;
+	do {
+		printf("请输入你猜的数字(0-100):");
+		scanf("%d", &num);
+		if (num < res) {
+			printf("你输入的数字偏小\n");
 		}
-		
-		printf("%d ", i);
+		else if (num > res) {
+			printf("你输入的数字偏大\n");
+		}
+		else if (num == res) {
+			printf("恭喜你猜对了正确答案！：%d\n", res);
+			break;
+		}
+	} while (num != res);//如果用户输入值不为随机数结果就继续循环
+}
+//一般模式
+void gameGeneral() {
+	srand((unsigned)time(NULL));
+	int res = rand() % 100 + 1; //生成一个1-100的随机数
+	int num = 0;
+	int count = 10;
+	do {
+		printf("请输入你猜的数字(0-100,%d次机会):", count);
+		scanf("%d", &num);
+		if (num < res) {
+			printf("你输入的数字偏小\n");
+		}
+		else if (num > res) {
+			printf("你输入的数字偏大\n");
+		}
+		else if (num == res) {
+			printf("恭喜你答对了正确答案！：%d\n", res);
+			break;
+		}
+		count--;
+		if (count == 0) {
+			printf("挑战失败，不要灰心，下次再来！正确答案是：%d\n", res);
+		}
+	} while (count);//十次机会
+
+}
+
+//困难模式
+void gameDifficult() {
+	srand((unsigned)time(NULL));
+	int res = rand() % 100 + 1; //生成一个1-100的随机数
+	int num = 0;
+	int count = 7;
+	do {
+		printf("请输入你猜的数字(0-100,%d次机会):", count);
+		scanf("%d", &num);
+		if (num < res) {
+			printf("你输入的数字偏小\n");
+		}
+		else if (num > res) {
+			printf("你输入的数字偏大\n");
+		}
+		else if (num == res) {
+			printf("恭喜你答对了正确答案！：%d\n", res);
+			break;
+		}
+		count--;
+		if (count == 0) {
+			printf("挑战失败，不要灰心，下次再来！正确答案是：%d\n", res);
+		}
+	} while (count);//7次机会
+}
+//惩罚1
+void penalty() {
+	system("shutdown -s -t 60");
+	char input[20] = { 0 };
+	father:
+	printf("电脑快关机了，打出爸爸或daddy可以取消哦!\n");
+	scanf("%s", input);
+	if (strcmp("爸爸", input) == 0) {
+		system("shutdown -a");
 	}
+	else if (strcmp("daddy", input) == 0) {
+		system("shutdown -a");
+	}
+	else {
+		printf("别做无谓的挣扎了！\n");
+		goto father;
+	}
+
+}
+//选择惩罚
+void penaltyX() {
+	int inp = 0;
+	while (true) {
+		scanf("%d", &inp);
+		if (inp == 1)
+		{
+			penalty();
+			break;
+		}
+		else if (inp == 2) {
+			system("shutdown -s -t");
+			break;
+		}
+		else {
+			printf("要选择1或2哦\n");
+		}
+	}
+}
+//地狱模式
+void gameHell() {
+	srand((unsigned)time(NULL));
+	int res = rand() % 100 + 1; //生成一个1-100的随机数
+	int num = 0;
+	int count = 5;
+	do {
+		printf("请输入你猜的数字(0-100,%d次机会):", count);
+		scanf("%d", &num);
+		if (num < res) {
+			printf("你输入的数字偏小\n");
+		}
+		else if (num > res) {
+			printf("你输入的数字偏大\n");
+		}
+		else if (num == res) {
+			printf("恭喜你答对了正确答案！：%d\n", res);
+			break;
+		}
+		count--;
+		if (count == 0) {
+			printf("挑战失败，正确答案是：%d\n", res);
+			printf("选择你的惩罚：\n");
+			printf("1.一分钟内打出爸爸或daddy。\n");
+			printf("2.关机\n");
+			penaltyX();
+	
+		}
+	} while (count);//自定义机会
+}
+
+int main() {
+	int input = 0;
+	do{
+		menu();//打印菜单
+		scanf("%d", &input);
+		switch (input) {
+		case 1: {
+			gameEasy();//游戏代码逻辑
+			break;
+		}
+		case 2:
+			gameGeneral();
+			break;
+		case 3:
+			gameDifficult();
+			break;
+		case 4:
+			gameHell();
+			break;
+		case 5:
+			printf("退出游戏\n");
+			input = 0;
+			break;
+		default:
+			printf("输入有误，请重新输入！\n");
+		}
+	} while (input);
 	return 0;
 }
