@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
+
 //头文件使用c语言默认的库函数要加
 //int main()
 //{ 
@@ -849,24 +851,58 @@
 //	//vs2022不支持变长数组
 //	return;
 //}
-#include <stdio.h>
+
+//刮刮乐
+//int main() {
+//	char str1[] = "hello word !!!!!";
+//	char str2[] = "****************";
+//	int left = 0;
+//	int right = strlen(str1)-1;
+//	while ( left <= right) {
+//		str2[left] = str1[left];
+//		str2[right] = str1[right];
+//		/*printf("%s\n", str1);*/
+//		printf("%s\n", str2);
+//		left++;
+//		right--;
+//		Sleep(1000);//休眠函数，后面数字单位是毫秒  
+//		system("CLS");//清理控制台屏幕，可以在cmd找到
+//	
+//	}
+//	printf("%s\n", str2);
+//	
+//	return 0;
+//}
+
+//随机输入一个值通过数组的算法查找 二分查找
 int main() {
-	int x = 3;
-	int y = 3;
-	printf("%d", x % 2);
-	switch (x % 2) {
-	case 1:
-		switch (y)
-		{
-		case 0:
-			printf("first");
-		case 1:
-			printf("second");
-			break;
-		default: printf("hello");
+	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int n = 0;
+	scanf("%d", &n);
+	int max = (sizeof(arr1) / sizeof(arr1[0])-1);
+	int min = 0;
+	int mid = (min + max) / 2;
+	int c = 0;
+	//通过数组的总字节长度除单个字节的长度得出数组的最大值的下标
+	while (min <= max) {
+		c++;
+		mid = (min + max) / 2;
+		if (arr1[mid] < n) {       
+			min = mid + 1;
 		}
-	case 2:
-		printf("third");
+		else if (arr1[mid] > n) {
+			max = mid - 1;
+		}
+		else{
+			printf("输入的随机值是%d\n", arr1[mid]);
+			printf("总共猜了%d次\n", c);
+			break;
+		}
+	}
+	if (min > max) {
+		printf("数值不存在");
 	}
 	return 0;
 }
+
+
