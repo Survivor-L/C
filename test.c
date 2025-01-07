@@ -875,34 +875,62 @@
 //}
 
 //随机输入一个值通过数组的算法查找 二分查找
-int main() {
-	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int n = 0;
-	scanf("%d", &n);
-	int max = (sizeof(arr1) / sizeof(arr1[0])-1);
-	int min = 0;
-	int mid = (min + max) / 2;
-	int c = 0;
-	//通过数组的总字节长度除单个字节的长度得出数组的最大值的下标
-	while (min <= max) {
-		c++;
-		mid = (min + max) / 2;
-		if (arr1[mid] < n) {       
-			min = mid + 1;
-		}
-		else if (arr1[mid] > n) {
-			max = mid - 1;
-		}
-		else{
-			printf("输入的随机值是%d\n", arr1[mid]);
-			printf("总共猜了%d次\n", c);
-			break;
-		}
-	}
-	if (min > max) {
-		printf("数值不存在");
-	}
-	return 0;
-}
+//int main() {
+//	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int n = 0;
+//	scanf("%d", &n);
+//	int max = (sizeof(arr1) / sizeof(arr1[0])-1);
+//	int min = 0;
+//	/*int mid = (min + max) / 2; */
+//	//这里min和max过大时会出问题；INT_MAX 2147483646
+//	//优化
+//	int mid = min + (max - min) / 2;
+//	int c = 0;
+//	//通过数组的总字节长度除单个字节的长度得出数组的最大值的下标
+//	while (min <= max) {
+//		c++;
+//		mid = (min + max) / 2;
+//		if (arr1[mid] < n) {       
+//			min = mid + 1;
+//		}
+//		else if (arr1[mid] > n) {
+//			max = mid - 1;
+//		}
+//		else{
+//			printf("输入的随机值是%d\n", arr1[mid]);
+//			printf("总共猜了%d次\n", c);
+//			break;
+//		}
+//	}
+//	if (min > max) {
+//		printf("数值不存在");
+//	}
+//	return 0;
+//}
+//函数
 
-
+//int Add(int x,int y) {
+//	//因为return返回的值是int类型，所以函数类型要为int
+//	// 如果函数不需要返回值类型那么就为void；
+//	// 调用时参数传什么类型这里就定义什么类型
+// //这里是形参，这里的参数在函数未被调用的的时候不分配空间
+//	return x + y;
+//	//返回计算值。这里返回什么值函数就要用什么类型
+//}
+//int main() {
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d %d", &a,&b);
+//	
+//	int sum = Add(a ,b); 
+// //调用函数 并传参数
+// 这里是实参 
+//	int sum1 = Add(5, 5);
+//
+//	int sum2 = Add(10, 5);
+//	printf("%d\n", sum);
+//	printf("%d\n", sum1);
+//	printf("%d\n", sum2);
+//	//一次创建多次调用
+//	return 0;
+//}
