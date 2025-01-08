@@ -934,3 +934,51 @@
 //	//一次创建多次调用
 //	return 0;
 //}
+//利用函数改变数组的内容
+//改变数组的值
+//void change_arr(int arr[], int length, int n) {
+//	for (int i = 0; i < length; i++) {
+//		arr[i] = n;
+//	}
+////打印
+//}void print_arr(int arr[], int length) {
+//	for (int i = 0; i < length; i++) {
+//		printf("%d", arr[i]);
+//	}
+//}
+//int main() {
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int length = sizeof(arr) / sizeof(arr[0]);
+//	int n = 0;
+//	scanf("%d", &n);
+//	change_arr(arr,length,n);
+//	print_arr(arr, length);
+//	return 0;
+//}
+//如果是打印二维数组行可以省略列不行；
+
+//输入年月判断一个月多少天
+_Bool leap(int year) {
+	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+		return true;
+	else 
+		return false;
+}
+
+int count_day(int year, int month) {
+	int days_arr[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	int day = days_arr[month -1];
+	if (leap(year))
+		return ++day;
+	else return day;
+}
+
+int main() {
+	int year = 0;
+	int month = 0;
+	printf("请输入年和月分:");
+	scanf("%d %d", &year, &month);
+	int day = count_day(year,month);
+	printf("%d年的%d月份有%d天\n", year, month, day);
+	return 0;
+}
