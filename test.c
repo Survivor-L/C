@@ -958,27 +958,67 @@
 //如果是打印二维数组行可以省略列不行；
 
 //输入年月判断一个月多少天
-_Bool leap(int year) {
-	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
-		return true;
-	else 
-		return false;
-}
+//判断闰年函数
+//_Bool leap(int year) {
+//	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+//		return true;
+//	else 
+//		return false;
+//}
+////判断输入月份有多少天的函数
+//int count_day(int year, int month) {
+//	int days_arr[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	int day = days_arr[month -1];
+//	if (leap(year))
+//		return day++;
+//	else 
+//		return day;
+//}
+//
+//int main() {
+//	int year = 0;
+//	int month = 0;
+//	printf("请输入年和月分:");
+//	scanf("%d %d", &year, &month);
+//	int day = count_day(year,month);
+//	printf("%d年的%d月份有%d天\n", year, month, day);
+//	return 0;
+//}
 
-int count_day(int year, int month) {
-	int days_arr[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
-	int day = days_arr[month -1];
-	if (leap(year))
-		return ++day;
-	else return day;
-}
+//链式访问 一个函数把另一个函数的参数作为返回值；
+//int main() {
+//	printf("%d", strlen("abcdef"));
+//	return 0;
+//}
+//函数的声明,函数或者变量都要先声明后使用
 
+//单个文件
+//如果函数主体写在主函数main后面那么在调用函数前要先声明该函数
+//声明的时候，函数的形参可以省略,但形参类型不能省略
+//函数的定义是一直特殊的声明
+//_Bool leap(int year);
+//int main() {
+//	int year = 0;
+//	scanf("%d", &year);
+//	leap(year);
+//	return 0;
+//}
+//
+////判断闰年函数
+//_Bool leap(int year) {
+//	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+//		return true;
+//	else
+//		return false;
+//}
+
+//多个文件
+#include "add.h" //引入外部头文件，自定义引入"" ,库函数用<>
 int main() {
-	int year = 0;
-	int month = 0;
-	printf("请输入年和月分:");
-	scanf("%d %d", &year, &month);
-	int day = count_day(year,month);
-	printf("%d年的%d月份有%d天\n", year, month, day);
+	int x = 0;
+	int y = 0;
+	scanf("%d %d", &x ,&y);
+	int sum = Add_fun(x, y);
+	printf("%d", sum);
 	return 0;
 }
