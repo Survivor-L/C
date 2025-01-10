@@ -1012,13 +1012,23 @@
 //		return false;
 //}
 
-//多个文件
-#include "add.h" //引入外部头文件，自定义引入"" ,库函数用<>
-int main() {
-	int x = 0;
-	int y = 0;
-	scanf("%d %d", &x ,&y);
-	int sum = Add_fun(x, y);
-	printf("%d", sum);
-	return 0;
-}
+////多个文件
+//#include "add.h" //引入外部头文件，自定义引入"" ,库函数用<>
+//int main() {
+//	int x = 0;
+//	int y = 0;
+//	scanf("%d %d", &x ,&y);
+//	int sum = Add_fun(x, y);
+//	printf("%d", sum);
+//	return 0;
+//}
+// 
+//scope 作用域
+//全局变量的作用域是整个工程
+//extern int a;
+//引用用其他文件夹的全局要这么写
+
+//生命周期
+// 局部变量的生命周期进入作用域变量创建，生命周期开始，出作用域生命周期结束
+//全局变量的生命周期是整个程序
+
