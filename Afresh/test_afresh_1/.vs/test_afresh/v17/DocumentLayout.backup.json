@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\code\\test_afresh\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{361BA982-334D-4ED3-B015-547117C3A6E4}|test_afresh\\test_afresh.vcxproj|D:\\code\\test_afresh\\test_afresh\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{361BA982-334D-4ED3-B015-547117C3A6E4}|test_afresh\\test_afresh.vcxproj|solutionrelative:test_afresh\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.c",
+              "DocumentMoniker": "D:\\code\\test_afresh\\test_afresh\\test.c",
+              "RelativeDocumentMoniker": "test_afresh\\test.c",
+              "ToolTip": "D:\\code\\test_afresh\\test_afresh\\test.c",
+              "RelativeToolTip": "test_afresh\\test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-10T11:24:19.797Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
