@@ -55,21 +55,36 @@
 //	//输入
 //	return 0;
 //}
+//#include <stdio.h>
+//int main()
+//{
+//	//判断年龄是否成年
+//	int age = 0;
+//	printf("请输入你的年龄：");
+//	scanf("%d", &age);
+//	if (age >= 18)
+//	{
+//		printf("你的年龄为%d岁已成年可以观看", age);
+//	}
+//	
+//	else if (age < 0)
+//		printf("你还没出生，让你爸妈努努力");
+//	else
+//		printf("你未成年，学习去吧！");
+//	return 0;
+//}
+
+//智能温控系统模拟
 #include <stdio.h>
 int main()
 {
-	//判断年龄是否成年
-	int age = 0;
-	printf("请输入你的年龄：");
-	scanf("%d", &age);
-	if (age >= 18)
-	{
-		printf("你的年龄为%d岁已成年可以观看", age);
-	}
-	
-	else if (age < 0)
-		printf("你还没出生，让你爸妈努努力");
-	else
-		printf("你未成年，学习去吧！");
-	return 0;
+	int temp = 35; //当前芯片温度
+	int isRunning_AI = 1; //是否再跑AI模型1为是否为0；
+	int manual_off = 0; //手动强制关闭开关，1为强制关，0为正常
+	if (manual_off == 1)
+		printf("System locked : Fan off");
+	else if (temp >= 40 || (temp > 30 && isRunning_AI))
+		printf("Fan on");
+	else if (temp < 25)
+		printf("System Cool");
 }
