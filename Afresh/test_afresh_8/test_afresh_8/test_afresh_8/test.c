@@ -21,6 +21,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "game.h"
+
 void menu(void)
 {
 	printf("*********************\n");
@@ -33,20 +34,29 @@ void menu(void)
 	return;
 }
 void game()
-{  
-	char mine[ROWS][COLS] = { 0 };
-	char show[ROWS][COLS] = { 0 };
+{
+	char mine[ROWS][COLS] = { 0 };//存放雷的信息
+	char show[ROWS][COLS] = { 0 };//排查出的雷的信息	
 	//初始化棋盘
 	InitBoard(mine, ROWS, COLS, '0');
 	InitBoard(show, ROWS, COLS, '*');
 	//打印棋盘
-	DisplayBoard(show,ROW,COL);
+	DisplayBoard(show, ROW, COL);
+	//DisplayBoard(mine, ROW, COL);
+	//埋雷
+	SteMine(mine,ROW,COL);
+
+	DisplayBoard(mine, ROW, COL);//答案
+	//挖雷
+	FindMine(mine,show, ROW,COL);
+	
+	return;
 }
 
-int main()
+void test(void)
 {
 	int input = 0;
-	while (input != 2)
+	do
 	{
 		menu();
 		scanf("%d", &input);
@@ -62,6 +72,13 @@ int main()
 			printf("重新输入\n");
 			continue;
 		}
-	}
+	} while (input != 2);
+	return;
+}
+
+
+int main()
+{
+	test();
 	return 0;
 }
