@@ -1,0 +1,5 @@
+﻿  test.c
+D:\Code\C\Afresh\test_afresh_14\afresh_14\afresh_14\test.c(123,2): warning C4098: “IntSort”:“void”函数返回值
+D:\Code\C\Afresh\test_afresh_14\afresh_14\afresh_14\test.c(169,33): warning C4133: “函数”: 从“void (__cdecl *)(const void *,const void *)”到“int (__cdecl *)(const void *,const void *)”的类型不兼容
+D:\Code\C\Afresh\test_afresh_14\afresh_14\afresh_14\test.c(176,33): warning C4133: “函数”: 从“void (__cdecl *)(const void *,const void *)”到“int (__cdecl *)(const void *,const void *)”的类型不兼容
+  afresh_14.vcxproj -> D:\Code\C\Afresh\test_afresh_14\afresh_14\x64\Debug\afresh_14.exe
