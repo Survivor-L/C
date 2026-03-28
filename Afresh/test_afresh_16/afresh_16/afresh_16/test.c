@@ -191,10 +191,36 @@
 //}
 
 
+//#include <string.h>
+//#include <assert.h>
+////strcat 模拟拼接字符
+//char* MyStrcat(char* dest ,const char* src)
+//{
+//	assert(dest && src);
+//	char* ret = dest;
+//	while (*dest != '\0')
+//	{
+//		dest++;
+//	}
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	char arr1[13] = "abcdef";
+//	char arr2[10] = "ghijkl";
+//	MyStrcat(arr1, arr2);
+//	printf("%s", arr1);
+//	return 0;
+//}
+
 #include <string.h>
 #include <assert.h>
-//strcat 模拟拼接字符
-char* MyStrcat(char* dest ,const char* src)
+//strncat 模拟拼接字符
+char* MyStrncat(char* dest , const char* src ,size_t num)
 {
 	assert(dest && src);
 	char* ret = dest;
@@ -202,9 +228,9 @@ char* MyStrcat(char* dest ,const char* src)
 	{
 		dest++;
 	}
-	while (*dest++ = *src++)
+	while (num--&&(*dest++ = *src++))
 	{
-		;
+		*dest = '\0';
 	}
 	return ret;
 }
@@ -212,7 +238,46 @@ int main()
 {
 	char arr1[13] = "abcdef";
 	char arr2[10] = "ghijkl";
-	MyStrcat(arr1, arr2);
+	MyStrncat(arr1, arr2 ,3);
 	printf("%s", arr1);
 	return 0;
 }
+
+
+
+
+
+
+//strcmp 比较字符串大小
+//#include <string.h>
+//int main()
+//{
+//	char arr1[] = "abcdq";
+//	char arr2[] = "abcd";
+//	int num = strcmp(arr1, arr2);
+//	printf("%d", num);
+//	return 0;
+//}
+
+//模拟strcmp
+//#include <string.h>
+//#include <assert.h>
+//int MyStrcmp(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	while ((*str1 && *str2) && (*str1 == *str2))
+//	{
+//		str1++;
+//		str2++;
+//	}
+//		
+//	return *str1 - *str2;
+//}
+//int main()
+//{
+//	char arr1[] = "abcdq";
+//	char arr2[] = "abcdqe";
+//	int num = MyStrcmp(arr1, arr2);
+//	printf("%d", num);
+//	return 0;
+//}
