@@ -1,0 +1,3 @@
+﻿  test.c
+D:\Code\C\Afresh\test_afresh_17\afresh_17\afresh_17\test.c(149,1): warning C4716: “MyEmcpy”: 必须返回一个值
+  afresh_17.vcxproj -> D:\Code\C\Afresh\test_afresh_17\afresh_17\x64\Debug\afresh_17.exe
